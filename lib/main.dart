@@ -23,7 +23,6 @@ class WeatherScreen extends StatefulWidget {
 
   @override
   WeatherScreenState createState() => WeatherScreenState();
-
 }
 
 class WeatherScreenState extends State<WeatherScreen> {
