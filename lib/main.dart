@@ -53,7 +53,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
       home: Scaffold(
         appBar: AppBar(backgroundColor: Colors.indigo, 
           title: const Text("Météo Paris", style: TextStyle(color: Colors.white)),
-        )
+        ),
         body: Center(
           child: FutureBuilder<Weather>(
             future: futureWeather, 
@@ -84,7 +84,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
       ),
     );
   }
-
 }
 
 
