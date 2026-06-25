@@ -73,8 +73,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   children: [
                     Image.network(iconUrl),
                     SizedBox(height: 20),
-                    Text('Description: ${weather.description}'),
-                    Text('Température: ${weather.temperature}°'),
+                    Text('Description : ${weather.description}', style: TextStyle(fontSize: 22),),
+                    Text('Température : ${weather.temperature}°', style: TextStyle(fontSize: 26)),
                   ],
                 );
               } else {
