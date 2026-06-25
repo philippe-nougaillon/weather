@@ -13,8 +13,8 @@ class Weather {
   factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(
       description: json['weather'][0]['description'], 
-      temperature: json['weather']['temp'].toDouble(), 
-      iconCode: json['weather'][0]['icon']
+      iconCode: json['weather'][0]['icon'],
+      temperature: json['main']['temp'].toDouble(), 
     );
   }
 }
@@ -31,7 +31,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   late Future<Weather> futureWeather;
 
   Future<Weather> fetchWeather() async {
-    final url = 'https://api.openweathermap.org/data/2.5/weather/q=Paris,fr&units=metrics&appid=8026186ef6bf29fdb211a2cc3b2a6d2b';
+    final url = 'https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&units=metric&APPID=8026186ef6bf29fdb211a2cc3b2a6d2b';
 
     final response = await http.get(Uri.parse(url));
 
@@ -74,7 +74,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     Image.network(iconUrl),
                     SizedBox(height: 20),
                     Text('Description: ${weather.description}'),
-                    Text('Température: ${weather.temperature}'),
+                    Text('Température: ${weather.temperature}°'),
                   ],
                 );
               } else {
