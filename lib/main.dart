@@ -20,6 +20,8 @@ class Weather {
 }
 
 class WeatherScreen extends StatefulWidget {
+  const WeatherScreen({super.key});
+
   @override
   _WeatherScreenState createState() => _WeatherScreenState();
 
@@ -29,7 +31,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   late Future<Weather> futureWeather;
 
   Future<Weather> fetchWeather() async {
-    final url = 'https://api.openweathermap.org/data/2.5/weather/q=Paris&units=metrics&appid=8026186ef6bf29fdb211a2cc3b2a6d2b';
+    final url = 'https://api.openweathermap.org/data/2.5/weather/q=Paris,fr&units=metrics&appid=8026186ef6bf29fdb211a2cc3b2a6d2b';
 
     final response = await http.get(Uri.parse(url));
 
@@ -86,9 +88,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 }
 
-
 void main() {
- runApp(WeatherScreen());
- 
- }
+  runApp(WeatherScreen());
+}
 
