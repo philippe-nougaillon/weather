@@ -7,7 +7,6 @@ class Weather {
   final double temperature;
   final String iconCode;
 
-
   Weather({required this.description, required this.temperature, required this.iconCode});
 
   factory Weather.fromJson(Map<String, dynamic> json) {
@@ -23,16 +22,15 @@ class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
 
   @override
-  _WeatherScreenState createState() => _WeatherScreenState();
+  WeatherScreenState createState() => WeatherScreenState();
 
 }
 
-class _WeatherScreenState extends State<WeatherScreen> {
+class WeatherScreenState extends State<WeatherScreen> {
   late Future<Weather> futureWeather;
 
   Future<Weather> fetchWeather() async {
     final url = 'https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&units=metric&APPID=8026186ef6bf29fdb211a2cc3b2a6d2b';
-
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
