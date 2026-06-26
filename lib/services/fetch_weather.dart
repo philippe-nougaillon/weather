@@ -4,7 +4,7 @@ import 'package:weather/models/weather.dart';
 import 'package:weather/api_key.dart';
 
 Future<Weather> fetchWeather() async {
-  final url = 'https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&units=metric&APPID=${open_weather_api_key}';
+  final url = 'https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&units=metric&APPID=${openWeatherApiKey}';
   final response = await http.get(Uri.parse(url));
 
   if (response.statusCode == 200) {
